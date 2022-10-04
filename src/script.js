@@ -47,7 +47,7 @@ gltfLoader.load('/models/Fox/glTF-Binary/Fox.glb', (gltf) => {
     // scene.add(gltf.scene)
 
     gltf.scene.scale.set(0.025, 0.025, 0.025)
-    // gltf.scene.position.z = -10
+    gltf.scene.position.z = -10
     scene.add(gltf.scene)
 })
 
@@ -110,7 +110,7 @@ window.addEventListener('resize', () => {
  */
 // Base camera
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
-camera.position.set(0, 1, 6)
+camera.position.set(0, 2, 2)
 scene.add(camera)
 
 // Controls
