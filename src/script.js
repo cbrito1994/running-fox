@@ -1,7 +1,7 @@
 import './style.css'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
-import * as dat from 'lil-gui'
+// import * as dat from 'lil-gui'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader'
 import { ARButton } from 'three/examples/jsm/webxr/ARButton'
@@ -10,7 +10,7 @@ import { ARButton } from 'three/examples/jsm/webxr/ARButton'
  * Base
  */
 // Debug
-const gui = new dat.GUI()
+// const gui = new dat.GUI()
 
 // Canvas
 const canvas = document.querySelector('canvas.webgl')
@@ -47,7 +47,6 @@ gltfLoader.load('/models/Fox/glTF-Binary/Fox.glb', (gltf) => {
     // scene.add(gltf.scene)
 
     gltf.scene.scale.set(0.025, 0.025, 0.025)
-    gltf.scene.position.z = -10
     scene.add(gltf.scene)
 })
 
@@ -110,7 +109,7 @@ window.addEventListener('resize', () => {
  */
 // Base camera
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
-camera.position.set(0, 2, 2)
+camera.position.set(0, 0, 6)
 scene.add(camera)
 
 // Controls
@@ -128,7 +127,7 @@ renderer.shadowMap.enabled = true
 renderer.shadowMap.type = THREE.PCFSoftShadowMap
 renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-renderer.xr.enabled = true;
+renderer.xr.enabled = true
 
 // Import AR Button
 const button = ARButton.createButton(renderer);
