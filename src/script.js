@@ -27,7 +27,7 @@ gltfLoader.setDRACOLoader(dracoLoader)
 
 let mixer = null
 
-gltfLoader.load('/models/Fox/glTF/Fox.gltf', (gltf) => {
+gltfLoader.load('/models/Fox/glTF-Binary/Fox.glb', (gltf) => {
     console.log(gltf)
     mixer = new THREE.AnimationMixer(gltf.scene)
     const action = mixer.clipAction(gltf.animations[2])
@@ -128,7 +128,6 @@ renderer.shadowMap.type = THREE.PCFSoftShadowMap
 renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 renderer.xr.enabled = true;
-
 
 // Import AR Button
 const button = ARButton.createButton(renderer);
